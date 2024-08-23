@@ -4,5 +4,15 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		require('daisyui'),
+	],
+	daisyui: {
+		themes: ["sunset"],
+		darkTheme: 'cyberpunk',
+		base: true,
+		utils: true,
+		styled: true,
+		logs: true,
+	},
 }
