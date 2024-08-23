@@ -1,6 +1,6 @@
 // astro.config.mjs
 import { defineConfig } from "astro/config";
-import netlify from '@astro/netlify';
+import netlify from '@astrojs/netlify';
 import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
