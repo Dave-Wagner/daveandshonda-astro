@@ -1,6 +1,6 @@
 // astro.config.mjs
 import { defineConfig } from "astro/config";
-import netlify from '@astro/netlify/functions';
+import netlify from '@astro/netlify';
 import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
@@ -8,8 +8,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: netlify({
-    edgeMiddleware: true
-  }),
+  adapter: netlify(),
   integrations: [tailwind(), react()]
 });
