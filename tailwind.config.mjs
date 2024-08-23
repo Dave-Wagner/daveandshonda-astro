@@ -9,7 +9,7 @@ export default {
 	],
 	daisyui: {
 		themes: ["sunset"],
-		darkTheme: 'cyberpunk',
+		darkTheme: 'sunset',
 		base: true,
 		utils: true,
 		styled: true,
