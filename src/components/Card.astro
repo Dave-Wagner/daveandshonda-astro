@@ -1,30 +1,77 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "astro:assets"; // Import the Image component from Astro's assets package
 
+// Define the Props interface, specifying the types for the props that the component expects
 interface Props {
-	title: string;
-	body: string;
-	href: string;
-	buttonText: string;
-	imageSrc: ImageMetadata;
+	title: string; // The title of the card
+	body: string; // The body text or description within the card
+	href: string; // The URL to navigate to when the card's button is clicked
+	buttonText: string; // The text to display on the button within the card
+	imageSrc: ImageMetadata; // The image source, expected to be an ImageMetadata object from Astro's assets
 }
 
+// Destructure the props passed to the component for easier access
 const { href, title, body, buttonText, imageSrc } = Astro.props;
 ---
 
-<div class="card glass w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-3xl 2xl:max-w-4xl mx-auto">
+<!-- 
+	Define the card's outer container. 
+	Use a combination of DaisyUI and Tailwind CSS classes to style and make the card responsive.
+	- 'glass' is a DaisyUI class that applies a translucent, frosted glass effect to the card.
+	- Tailwind's width classes (e.g., 'w-full', 'max-w-sm') ensure the card scales responsively.
+-->
+<div
+	class="card glass w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-3xl 2xl:max-w-4xl mx-auto"
+>
+	<!-- The <figure> tag is used to contain the image associated with the card -->
 	<figure>
+		<!-- 
+			Render the image using Astro's Image component.
+			- src={imageSrc}: The image source, passed as a prop, which is an ImageMetadata object.
+			- alt={title}: The alt text for accessibility, using the card's title.
+			- class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover":
+			  Tailwind CSS classes are used to apply responsive height and full width to the image. 'object-cover' ensures the image covers the area without distortion.
+		-->
 		<Image
 			src={imageSrc}
 			alt={title}
 			class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover"
 		/>
 	</figure>
+
+	<!-- The card body where the text and actions (like buttons) are located -->
 	<div class="card-body p-4 sm:p-6 md:p-8 lg:p-10">
-		<h2 class="card-title text-lg sm:text-xl md:text-2xl lg:text-3xl">{title}</h2>
+		<!-- 
+			Display the card's title. 
+			Tailwind CSS is used to increase the text size on larger screens, making it more prominent.
+		-->
+		<h2 class="card-title text-lg sm:text-xl md:text-2xl lg:text-3xl">
+			{title}
+		</h2>
+
+		<!-- 
+			Display the card's body text. 
+			Similar to the title, the text size scales with screen size for better readability, using Tailwind CSS.
+		-->
 		<p class="text-sm sm:text-base md:text-lg lg:text-xl">{body}</p>
+
+		<!-- 
+			The card actions section, aligned to the end (right side). 
+			- 'mt-4' (Tailwind) adds top margin for spacing from the body text.
+			- 'justify-end' is a Tailwind utility for aligning the actions to the right.
+		-->
 		<div class="card-actions justify-end mt-4">
-			<a href={href} class="btn btn-primary text-xs sm:text-sm md:text-base lg:text-lg">{buttonText}</a>
+			<!-- 
+				Render a button as a link.
+				- href={href}: The destination URL.
+				- class="btn btn-primary text-xs sm:text-sm md:text-base lg:text-lg": 
+				  DaisyUI classes 'btn' and 'btn-primary' are used for button styling, while Tailwind CSS is used for responsive text sizing.
+			-->
+			<a
+				href={href}
+				class="btn btn-primary text-xs sm:text-sm md:text-base lg:text-lg"
+				>{buttonText}</a
+			>
 		</div>
 	</div>
 </div>
