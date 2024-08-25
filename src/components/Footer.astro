@@ -1,17 +1,42 @@
 ---
 // TODO: Fix links
+// A reminder to update the links in the footer to point to the correct destinations.
 ---
 
+<!-- 
+	Footer component for the website.
+	Uses a combination of DaisyUI and Tailwind CSS classes to style the footer, making it centered, with a base background and text color.
+	- 'footer': A DaisyUI class for consistent footer styling.
+	- 'footer-center': Centers the content within the footer.
+	- 'bg-base-200' and 'text-base-content': DaisyUI classes for setting background and text colors.
+	- 'rounded': Adds rounded corners to the footer.
+	- 'p-10': Adds padding around the footer content.
+-->
 <footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
+    
+    <!-- Navigation section of the footer -->
     <nav class="grid grid-flow-col gap-4">
+        <!-- 
+			Each link represents a section of the wedding website.
+			- 'link link-hover': DaisyUI classes that style the links and add a hover effect.
+			These links currently have placeholder text and need to be updated with actual URLs.
+		-->
         <a class="link link-hover">Our Story</a>
         <a class="link link-hover">RSVP</a>
         <a class="link link-hover">Location</a>
-        <a class="link link-hover">Accomodations</a>
+        <a class="link link-hover">Accommodations</a>
         <a class="link link-hover">Food</a>
     </nav>
+
+    <!-- Social media icons section -->
     <nav>
         <div class="grid grid-flow-col gap-4">
+            <!-- 
+				Social media icon - Twitter (example)
+				Each icon is an SVG wrapped in an anchor tag.
+				- 'fill-current': Tailwind CSS class that allows the icon to inherit the current text color.
+				The links don't have href attributes yet, meaning they need to be updated with actual URLs to the social media profiles.
+			-->
             <a>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +50,8 @@
                     ></path>
                 </svg>
             </a>
+
+            <!-- Social media icon - YouTube (example) -->
             <a>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +65,8 @@
                     ></path>
                 </svg>
             </a>
+
+            <!-- Social media icon - Facebook (example) -->
             <a>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,9 +82,15 @@
             </a>
         </div>
     </nav>
+
+    <!-- Footer copyright section -->
     <aside>
         <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by a dude that loves his wife.
+            <!-- 
+				Display the current year dynamically using JavaScript's Date object.
+				A custom message is displayed, giving a personal touch to the footer.
+			-->
+            Copyright © {new Date().getFullYear()} - All rights reserved by a dude that loves his wife.
         </p>
     </aside>
 </footer>
