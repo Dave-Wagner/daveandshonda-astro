@@ -1,81 +1,145 @@
 ---
-import { Image } from 'astro:assets';
-import OurLogo from '../images/DaveandShondaLogo2.png';
+import { Image } from 'astro:assets'; // Import the Image component from Astro's assets package
+import OurLogo from '../images/DaveandShondaLogo2.png'; // Import the logo image for the navbar
 
+// Define the Props interface, specifying the types for the props that the component expects
 interface Props {
-	title: string;
+	title: string; // The title to be displayed in the navbar
 }
 
+// Destructure the props passed to the component for easier access
 const { title } = Astro.props;
 ---
 
-<!-- Navbar -->
+<!-- 
+	Navbar component 
+	Uses a combination of DaisyUI and Tailwind CSS classes for styling and responsive behavior.
+	- 'navbar': A DaisyUI class that applies consistent navbar styling.
+	- 'justify-between': Tailwind utility that spaces out the elements in the navbar.
+	- 'bg-base-300': A DaisyUI class for setting the background color of the navbar.
+-->
 <nav class="navbar justify-between bg-base-300">
-    <!-- Logo -->
+    
+    <!-- Logo and Title -->
+    <!-- 
+		The logo and title are wrapped in an anchor tag, which acts as a link (could be linked to the homepage).
+		- 'btn btn-ghost': DaisyUI classes that style the anchor tag to look like a button but without a background.
+		- 'text-lg': Tailwind utility for setting the text size.
+	-->
     <a class="btn btn-ghost text-lg">
+        <!-- 
+			Render the logo using Astro's Image component.
+			- src={OurLogo}: The source of the image, imported at the top.
+			- alt="Logo": The alt text for accessibility.
+			- width={48} and height={48}: Set the logo dimensions to 48x48 pixels.
+		-->
         <Image 
             alt="Logo" 
             src={OurLogo} 
             class="" 
             width={48}
             height={48}
-            />
-        {title}
+        />
+        {title} <!-- Display the title next to the logo -->
     </a>
 
-    <!-- Menu for mobile -->
+    <!-- Mobile Menu -->
+    <!-- 
+		A dropdown menu for mobile devices.
+		- 'dropdown dropdown-end': DaisyUI classes that position the dropdown to the right and apply dropdown styling.
+		- 'sm:hidden': Tailwind utility to hide this element on screens that are 'sm' (small) and larger.
+	-->
     <div class="dropdown dropdown-end sm:hidden">
+        <!-- 
+			Button to toggle the dropdown menu.
+			- 'btn btn-ghost': DaisyUI classes for a button with no background.
+		-->
         <button class="btn btn-ghost">
-            <i class="fa-solid fa-bars text-lg"></i>
+            <i class="fa-solid fa-bars text-lg"></i> <!-- FontAwesome icon for the hamburger menu -->
         </button>
 
+        <!-- 
+			Dropdown content for the mobile menu.
+			- 'dropdown-content': DaisyUI class for styling dropdown content.
+			- 'menu': DaisyUI class to style the content as a vertical menu.
+			- 'z-[1]': Tailwind utility to set the z-index of the dropdown to ensure it appears above other elements.
+			- 'bg-base-200': DaisyUI class for the background color.
+			- 'p-4': Tailwind utility for padding.
+			- 'rounded-box': DaisyUI class for rounded corners.
+			- 'shadow': Tailwind utility for applying a shadow effect.
+			- 'w-64': Tailwind utility for setting the width of the dropdown to 64 units.
+			- 'gap-2': Tailwind utility for spacing between menu items.
+		-->
         <ul tabindex="0" class="dropdown-content menu z-[1] bg-base-200 p-4 rounded-box shadow w-64 gap-2">
+            <!-- List of menu items for mobile -->
             <li><a>Our Story</a></li>
             <li><a>RSVP</a></li>
             <li>
+                <!-- 
+					A nested dropdown for additional wedding information.
+					- 'menu-title': DaisyUI class for styling a section title within a menu.
+				-->
                 <h2 class="menu-title">Wedding Info</h2>
                 <ul>
                     <li><a>Location</a></li>
-                    <li><a>Accomodations</a></li>
+                    <li><a>Accommodations</a></li>
                     <li><a>Food</a></li>
                 </ul>
             </li>
             <a class="btn btn-primary btn-sm">
-                <i class="fa-solid fa-gifts"></i>
+                <i class="fa-solid fa-gifts"></i> <!-- FontAwesome icon for gifts -->
                 Registry
             </a>
         </ul>
     </div>
 
-    <!-- Menu for desktop -->
+    <!-- Desktop Menu -->
+    <!-- 
+		A horizontal menu for desktop and larger screens.
+		- 'hidden sm:flex': Tailwind utilities to hide this menu on smaller screens and display it on 'sm' (small) and larger screens.
+		- 'gap-2': Tailwind utility for spacing between the menu items.
+	-->
     <div class="hidden sm:flex gap-2">
+        <!-- Menu items for desktop -->
         <a class="btn btn-ghost btn-sm">
-            <i class="fa-solid fa-heart text-secondary"></i>
+            <i class="fa-solid fa-heart text-secondary"></i> <!-- FontAwesome icon with heart -->
             Our Story
         </a>
 
         <a class="btn btn-ghost btn-sm">
-            <i class="fa-solid fa-address-book text-secondary"></i>
+            <i class="fa-solid fa-address-book text-secondary"></i> <!-- FontAwesome icon with address book -->
             RSVP
         </a>
 
-        <!-- Dropdown menu -->
+        <!-- Dropdown menu for additional wedding information -->
         <div class="dropdown dropdown-end">
             <button class="btn btn-ghost btn-sm">
-                <i class="fa-solid fa-circle-info text-secondary"></i>
+                <i class="fa-solid fa-circle-info text-secondary"></i> <!-- FontAwesome icon with info circle -->
                 Wedding Info
-                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-down"></i> <!-- FontAwesome icon with down arrow -->
             </button>
 
+            <!-- 
+				Dropdown content for desktop.
+				- 'dropdown-content': DaisyUI class for dropdown styling.
+				- 'menu': DaisyUI class to style content as a vertical menu.
+				- 'z-[1]': Tailwind utility to ensure the dropdown appears above other elements.
+				- 'bg-base-200': DaisyUI class for the background color.
+				- 'p-6': Tailwind utility for padding.
+				- 'rounded-box': DaisyUI class for rounded corners.
+				- 'shadow': Tailwind utility for applying a shadow effect.
+				- 'w-56': Tailwind utility for setting the width of the dropdown to 56 units.
+				- 'gap-2': Tailwind utility for spacing between menu items.
+			-->
             <ul tabindex="0" class="dropdown-content menu z-[1] bg-base-200 p-6 rounded-box shadow w-56 gap-2">
                 <li><a>Location</a></li>
-                <li><a>Accomodations</a></li>
+                <li><a>Accommodations</a></li>
                 <li><a>Food</a></li>
             </ul>
         </div>
 
         <a class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-gifts"></i>
+            <i class="fa-solid fa-gifts"></i> <!-- FontAwesome icon with gifts -->
             Registry
         </a>
     </div>
