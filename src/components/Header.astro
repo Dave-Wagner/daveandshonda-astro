@@ -73,7 +73,7 @@ const { title } = Astro.props;
         <ul tabindex="0" class="dropdown-content menu z-[1] bg-base-200 p-4 rounded-box shadow w-64 gap-2">
             <!-- List of menu items for mobile -->
             <li><a>Our Story</a></li>
-            <li><a>RSVP</a></li>
+            <li><a href="/rsvp">RSVP</a></li>
             <li>
                 <!-- 
 					A nested dropdown for additional wedding information.
@@ -106,7 +106,7 @@ const { title } = Astro.props;
             Our Story
         </a>
 
-        <a class="btn btn-ghost btn-sm">
+        <a href="/rsvp" class="btn btn-ghost btn-sm">
             <i class="fa-solid fa-address-book text-secondary"></i> <!-- FontAwesome icon with address book -->
             RSVP
         </a>
