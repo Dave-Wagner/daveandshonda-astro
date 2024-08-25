@@ -1,19 +1,63 @@
 ---
-import { Image } from "astro:assets";
-import Card from "./Card.astro";
-import HeroImage from "../images/tmp_hero.jpg";
-import TempCardImage from "../images/tmp_card.jpg";
+import { Image } from "astro:assets"; // Import the Image component from Astro's assets package
+import Card from "./Card.astro"; // Import the Card component to be used within the hero section
+import HeroImage from "../images/tmp_hero.jpg"; // Import the background image for the hero section
+import TempCardImage from "../images/tmp_card.jpg"; // Import the image to be used within the Card component
 ---
 
+<!-- 
+	Hero Section
+	- 'hero': A DaisyUI class that applies consistent hero section styling.
+	- 'min-h-screen': Tailwind CSS utility to set the minimum height of the hero section to the full height of the viewport.
+	- 'relative': Positions the hero section relative to its container, allowing for absolute positioning of child elements.
+-->
 <div class="hero min-h-screen relative">
+  
+  <!-- 
+		Background Image
+		Render the hero background image using Astro's Image component.
+		- 'absolute inset-0': Tailwind utilities to position the image absolutely within the hero section, covering the entire area.
+		- 'w-full h-full': Set the image to cover the full width and height of the hero section.
+		- 'object-cover': Ensures the image covers the hero area without distortion.
+	-->
   <Image
     src={HeroImage}
     alt="Hero background"
     class="absolute inset-0 w-full h-full object-cover"
   />
+
+  <!-- 
+		Overlay for Hero Section
+		- 'hero-overlay': A DaisyUI class that applies an overlay on top of the background image.
+		- 'bg-opacity-60': Tailwind utility to set the overlay's opacity to 60%.
+		- 'absolute inset-0': Positions the overlay absolutely to cover the entire hero section.
+	-->
   <div class="hero-overlay bg-opacity-60 absolute inset-0"></div>
+
+  <!-- 
+		Content within the Hero Section
+		- 'hero-content': DaisyUI class that styles the hero content.
+		- 'text-neutral-content': DaisyUI class that applies a neutral text color, ensuring good contrast against the background.
+		- 'text-center': Tailwind utility to center the text.
+		- 'relative z-10': Positions the content relative to the hero section and ensures it appears above the background and overlay (with a z-index of 10).
+	-->
   <div class="hero-content text-neutral-content text-center relative z-10">
+    
+    <!-- 
+		Container for the Card component
+		- 'max-w-md': Tailwind utility to limit the width of the content container to 'md' size (medium devices), ensuring the card doesn't stretch too wide.
+	-->
     <div class="max-w-md">
+      
+      <!-- 
+			Card Component
+			Render the Card component with the necessary props.
+			- 'title': The title to be displayed in the Card.
+			- 'body': The body text describing the card's purpose.
+			- 'href': The link where the button in the Card should navigate to.
+			- 'imageSrc': The image to be used within the Card, imported at the top.
+			- 'buttonText': The text to be displayed on the button within the Card.
+		-->
       <Card
         title="Join Us!"
         body="RSVP for our wedding, March 15, 2025"

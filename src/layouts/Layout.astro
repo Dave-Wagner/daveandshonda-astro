@@ -1,29 +1,80 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro'; // Import the Header component to be used in the layout
+import Footer from '../components/Footer.astro'; // Import the Footer component to be used in the layout
 
-
+// Define the Props interface, specifying the types for the props that the component expects
 interface Props {
-	title: string;
+	title: string; // The title to be used for the page and passed to the Header component
 }
 
+// Destructure the props passed to the component for easier access
 const { title } = Astro.props;
 ---
 
 <!doctype html>
+<!-- 
+	The HTML document is set to 'html' mode and the language attribute is set to 'en' for English.
+	'data-theme="sunset"' applies the 'sunset' theme from DaisyUI for consistent theming across the site.
+-->
 <html lang="en" data-theme="sunset">
 	<head>
+		<!-- 
+			Meta tags for basic HTML setup.
+			- 'charset="UTF-8"': Sets the character encoding for the document to UTF-8.
+			- 'name="description"': Provides a description of the page for search engines and social media.
+			- 'name="viewport"': Ensures the page scales correctly on different devices and screen sizes.
+		-->
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
+
+		<!-- 
+			Favicon for the site.
+			- 'href="/favicon.ico"': Points to the favicon icon file located at the root of the public directory.
+		-->
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<!-- 
+			Link to FontAwesome for icons used throughout the site.
+			- 'rel="stylesheet"': Loads the CSS for FontAwesome icons.
+			- 'integrity' and 'crossorigin': Used for security and cross-origin access.
+			- 'referrerpolicy="no-referrer"': Ensures no referrer information is sent with requests for this resource.
+		-->
+		<link 
+			rel="stylesheet" 
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+			crossorigin="anonymous" 
+			referrerpolicy="no-referrer" 
+		/>
+
+		<!-- 
+			Dynamically set the page generator meta tag.
+			- 'content={Astro.generator}': Automatically populated by Astro to indicate that Astro generated the page.
+		-->
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- 
+			Set the page title dynamically based on the 'title' prop passed to the layout.
+		-->
 		<title>{title}</title>
 	</head>
 	<body>
+		<!-- 
+			Render the Header component.
+			- 'title={title}': Passes the title prop to the Header component for consistent page titling.
+		-->
 		<Header title={title} />
+
+		<!-- 
+			<slot />: A special Astro tag that renders child components or content passed into this layout.
+			Allows for dynamic content insertion within the body, based on the specific page or component using this layout.
+		-->
 		<slot />
+
+		<!-- 
+			Render the Footer component.
+		-->
 		<Footer />
 	</body>
 </html>
