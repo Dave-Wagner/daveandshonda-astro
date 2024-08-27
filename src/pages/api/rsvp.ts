@@ -23,16 +23,6 @@ export const POST: APIRoute = async ({ request }) => {
         );
     }
 
-    // If the user is not attending, no need to validate further
-    if (!canAttend) {
-        return new Response(
-            JSON.stringify({
-                message: "Thank you for letting us know. Your RSVP has been recorded."
-            }),
-            { status: 200 }
-        );
-    }
-
     // If the user is attending, validate only the fields that are required
     if (canAttend) {
         if (!phone) {
@@ -56,11 +46,57 @@ export const POST: APIRoute = async ({ request }) => {
         }
     }
 
-    // Further processing of the data if necessary...
-    return new Response(
-        JSON.stringify({
-            message: "Thank you for your RSVP! We look forward to seeing you."
-        }),
-        { status: 200 }
-    );
+    // Construct the JSON object to send to the webhook
+    const jsonData = {
+        first_name,
+        last_name,
+        email,
+        canAttend,
+        phone,
+        guest_count_adult,
+        guest_count_child,
+        food_allergies,
+        special_considerations,
+        message,
+    };
+
+    // Send the JSON data to the Make.com webhook
+    try {
+        const response = await fetch("https://hook.us1.make.com/byoc8c8frxbmfgqdy3fdh6x47xl67n7k", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonData),
+        });
+
+        if (!response.ok) {
+            return new Response(
+                JSON.stringify({
+                    message: "There was an error processing your RSVP. Please try again later."
+                }),
+                { status: 500 }
+            );
+        }
+
+        // Different messages based on attendance
+        const successMessage = canAttend
+            ? "Thank you for your RSVP! We look forward to seeing you."
+            : "Thank you for letting us know. Your response has been recorded.";
+
+        return new Response(
+            JSON.stringify({
+                message: successMessage
+            }),
+            { status: 200 }
+        );
+    } catch (error) {
+        return new Response(
+            JSON.stringify({
+                message: "There was an error processing your RSVP. Please try again later.",
+                error: (error as Error).message,
+            }),
+            { status: 500 }
+        );
+    }
 };
