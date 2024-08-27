@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro'; // Import the Header component to be used in the layout
-import Footer from '../components/Footer.astro'; // Import the Footer component to be used in the layout
+import Header from "../components/Header.astro"; // Import the Header component to be used in the layout
+import Footer from "../components/Footer.astro"; // Import the Footer component to be used in the layout
 
 // Define the Props interface, specifying the types for the props that the component expects
 interface Props {
@@ -40,12 +40,12 @@ const { title } = Astro.props;
 			- 'integrity' and 'crossorigin': Used for security and cross-origin access.
 			- 'referrerpolicy="no-referrer"': Ensures no referrer information is sent with requests for this resource.
 		-->
-		<link 
-			rel="stylesheet" 
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-			crossorigin="anonymous" 
-			referrerpolicy="no-referrer" 
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
 		/>
 
 		<!-- 
@@ -59,7 +59,7 @@ const { title } = Astro.props;
 		-->
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen flex flex-col">
 		<!-- 
 			Render the Header component.
 			- 'title={title}': Passes the title prop to the Header component for consistent page titling.
@@ -70,7 +70,9 @@ const { title } = Astro.props;
 			<slot />: A special Astro tag that renders child components or content passed into this layout.
 			Allows for dynamic content insertion within the body, based on the specific page or component using this layout.
 		-->
-		<slot />
+		<div class="flex-grow">
+			<slot />
+		</div>
 
 		<!-- 
 			Render the Footer component.
