@@ -1,3 +1,6 @@
+// TODO: Componentize the RSVP form
+// TODO: Add a RSVP modification version of this form
+
 import React, { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 
@@ -266,7 +269,7 @@ export default function RSVPForm() {
                     </button>
 
                     <a className="btn btn-neutral">
-                        See our blog
+                        Modify your RSVP
                         <i className="fa-solid fa-blog"></i>
                     </a>
                 </div>
