@@ -1,6 +1,7 @@
 ---
 // TODO: fix blog link once I've created it
 import Layout from "../layouts/Layout.astro";
+import RSVPForm from "../components/RSVPForm.tsx";
 ---
 
 <Layout title="Dave & Shonda - RSVP">
@@ -14,17 +15,8 @@ import Layout from "../layouts/Layout.astro";
                 Shonda and I are excited to celebrate our special day with you. Please let us know if you can make it by February 1, 2025.
             </span>
 
-            <div class="flex gap-4">
-                <a class="btn btn-primary">
-                    Send RSVP
-                    <i class="fa-solid fa-arrow-right text-sm"></i>
-                </a>
+            <RSVPForm client:load />
 
-                <a class="btn btn-neutral">
-                    See our blog
-                    <i class="fa-solid fa-blog"></i>
-                </a>
-            </div>
         </div>
     </div>
 </Layout>
