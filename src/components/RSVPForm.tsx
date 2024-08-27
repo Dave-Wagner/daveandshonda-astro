@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
@@ -96,6 +96,21 @@ export default function RSVPForm() {
             }); // Error message
         }
     }
+
+    // Automatically dismiss toast after 5 seconds
+    useEffect(() => {
+        if (toastMessage) {
+            const timer = setTimeout(() => {
+                setToastMessage(null);
+            }, 5000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [toastMessage]);
+
+    const handleCloseToast = () => {
+        setToastMessage(null);
+    };
 
     return (
         <div>
@@ -256,11 +271,12 @@ export default function RSVPForm() {
                     </a>
                 </div>
             </form>
-            
+
             {toastMessage && (
                 <div className={`toast toast-end z-10 mb-20`}>
                     <div className={`alert ${toastMessage.status === 'success' ? 'alert-success' : toastMessage.status === 'info' ? 'alert-info' : 'alert-error'}`}>
                         <span>{toastMessage.message}</span>
+                        <button className="btn btn-sm btn-ghost ml-4 fa-solid fa-circle-xmark" onClick={handleCloseToast} />
                     </div>
                 </div>
             )}
