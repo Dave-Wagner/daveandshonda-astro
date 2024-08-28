@@ -17,7 +17,7 @@ interface Props {
 const { title } = Astro.props;
 
 // The current path of the page
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.href;
 ---
 
 <!doctype html>
@@ -65,7 +65,7 @@ const currentPath = Astro.url.pathname;
 		-->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content="The wedding website of Dave and Shonda" />
-		<meta property="og:image" content={currentPath + "/" + ogImage.src} />
+		<meta property="og:image" content={currentPath + ogImage.src} />
 		<meta property="og:url" content={currentPath} />
 		<meta property="og:type" content="application" />
 
