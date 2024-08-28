@@ -15,7 +15,7 @@ interface Props {
 const { title } = Astro.props;
 
 // Social Image for Open Graph meta tags
-const ogImage = '../images/tmp_card.jpg';
+import ogImage from "../images/tmp_card.jpg";
 
 // Cononical URL for Open Graph meta tags
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -71,7 +71,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		-->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content="The wedding website of Dave and Shonda" />
-		<meta property="og:image" content={ogImage} />
+		<meta property="og:image" content={ogImage.src} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="application" />
 
