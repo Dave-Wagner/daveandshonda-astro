@@ -267,11 +267,6 @@ export default function RSVPForm() {
                         Send RSVP
                         <i className="fa-solid fa-arrow-right text-sm"></i>
                     </button>
-
-                    <a className="btn btn-neutral">
-                        Modify your RSVP
-                        <i className="fa-solid fa-blog"></i>
-                    </a>
                 </div>
             </form>
 
