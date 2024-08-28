@@ -1,5 +1,7 @@
 ---
-import '@fontsource/great-vibes'; // Import the 'Great Vibes' font from Fontsource
+import { ViewTransitions } from "astro:transitions";
+
+import "@fontsource/great-vibes"; // Import the 'Great Vibes' font from Fontsource
 
 import Header from "../components/Header.astro"; // Import the Header component to be used in the layout
 import Footer from "../components/Footer.astro"; // Import the Footer component to be used in the layout
@@ -27,7 +29,10 @@ const { title } = Astro.props;
 			- 'name="viewport"': Ensures the page scales correctly on different devices and screen sizes.
 		-->
 		<meta charset="UTF-8" />
-		<meta name="description" content="The wedding website of Dave and Shonda" />
+		<meta
+			name="description"
+			content="The wedding website of Dave and Shonda"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- 
@@ -60,6 +65,11 @@ const { title } = Astro.props;
 			Set the page title dynamically based on the 'title' prop passed to the layout.
 		-->
 		<title>{title}</title>
+
+		<!-- 
+			Include the ViewTransitions component from Astro to enable page transitions.
+		-->
+		<ViewTransitions />
 	</head>
 	<body class="min-h-screen flex flex-col w-full overflow-x-hidden">
 		<!-- 
