@@ -18,7 +18,7 @@ const { title } = Astro.props;
 	- 'justify-between': Tailwind utility that spaces out the elements in the navbar.
 	- 'bg-base-300': A DaisyUI class for setting the background color of the navbar.
 -->
-<nav class="navbar justify-between bg-base-300 sticky top-0 z-50">
+<nav class="navbar justify-between bg-base-300 sticky top-0 z-50 w-full px-4">
     
     <!-- Logo and Title -->
     <!-- 
@@ -26,7 +26,7 @@ const { title } = Astro.props;
 		- 'btn btn-ghost': DaisyUI classes that style the anchor tag to look like a button but without a background.
 		- 'text-lg': Tailwind utility for setting the text size.
 	-->
-    <a class="btn btn-ghost text-3xl font-great-vibes" href="/">
+    <a class="btn btn-ghost text-3xl font-great-vibes flex gap-2" href="/">
         <!-- 
 			Render the logo using Astro's Image component.
 			- src={OurLogo}: The source of the image, imported at the top.

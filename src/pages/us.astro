@@ -1,23 +1,148 @@
 ---
+import { Image } from "astro:assets"; // Import the Image component from Astro's assets package
 import Layout from "../layouts/Layout.astro";
+
+import ShondaImage from "../images/marius-muresan-phze0FOgQpk-unsplash.jpg";
+import DaveImage from "../images/pexels-lukzy-18247648.jpg";
 ---
 
 <Layout title="Dave & Shonda - Our Story">
-    <div class="flex flex-col sm:flex-row justify-center mt-12">
-        <div class="flex sm:flex-row items-center text-center gap-6 w-full px-4">
-            <div class="flex-1">
-                <h1 class="text-5xl font-bold font-great-vibes">Shonda</h1>
-                <div class="divider"></div>
+    <div class="flex flex-col sm:flex-row justify-center items-start sm:items-stretch mt-12 sm:gap-12 px-4">
+        <div class="flex-1 flex flex-col items-center text-center">
+            <h1 class="text-5xl font-bold font-great-vibes">Shonda</h1>
+            <div class="divider"></div>
+            <div class="card glass w-full">
+                <figure>
+                    <Image src={ShondaImage} alt="Shonda" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title font-great-vibes text-4xl">
+                        Shonda Rollins
+                    </h2>
+                    <p class="prose">
+                        Shonda Rollins, a native of Bedford, Indiana, grew
+                        up surrounded by the natural beauty and close-knit
+                        community of her hometown. From an early age, she
+                        developed a deep love for the outdoors, exploring
+                        the rolling hills and limestone quarries that define
+                        the landscape of southern Indiana. Shonda's passion
+                        for nature is matched only by her dedication to
+                        family and community, always striving to make a
+                        positive impact on those around her.
+                    </p>
+                    <p class="prose">
+                        After graduating from high school, Shonda pursued a
+                        career in education, where she quickly became known
+                        for her compassion, creativity, and commitment to
+                        her students. Whether she's organizing local events,
+                        volunteering, or simply enjoying a hike through the
+                        trails she knows by heart, Shonda brings warmth and
+                        enthusiasm to everything she does. Her journey is
+                        one of resilience, joy, and a deep connection to her
+                        roots.
+                    </p>
+                    <div
+                        class="card-actions sm:justify-start justify-center"
+                    >
+                        <button class="btn btn-primary"
+                            >Learn more about Shonda!</button
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="divider divider-horizontal"></div>
-            <div class="flex-1">
-                <h1 class="text-5xl font-bold font-great-vibes">Us</h1>
-                <div class="divider"></div>
+        </div>
+
+        <div class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0">
+            <h1 class="text-5xl font-bold font-great-vibes">Us</h1>
+            <div class="divider"></div>
+            <div class="card glass w-full">
+                <div class="card-body">
+                    <h2 class="card-title font-great-vibes justify-center text-4xl">
+                        Our Journey Together
+                    </h2>
+                    <p class="prose">
+                        It all began in the most unexpected of places—a
+                        hiking trail nestled deep in the heart of the
+                        Pacific Northwest. Shonda, with her love for
+                        limestone quarries and rolling hills, found herself
+                        far from home, exploring new terrains. Dave, a
+                        mountain lover and seasoned Boy Scout, was just
+                        another adventurer on the trail, until fate (or
+                        perhaps a shared love for the great outdoors)
+                        brought them together.
+                    </p>
+                    <p class="prose">
+                        What started as a casual conversation about the best
+                        way to set up a tent in the rain quickly turned into
+                        a deeper connection. Shonda shared stories of her
+                        life in Bedford, Indiana, while Dave regaled her
+                        with tales of his adventures in the mountains. It
+                        didn’t take long for them to realize they were two
+                        sides of the same coin—one from the rolling hills of
+                        Indiana, the other from the rugged peaks of
+                        Washington, both with a profound appreciation for
+                        nature and community.
+                    </p>
+                    <p class="prose">
+                        Together, they’ve embarked on countless adventures,
+                        from hiking the Cascades to exploring the hidden
+                        gems of southern Indiana. Their journey is one of
+                        laughter, love, and a shared passion for the
+                        outdoors. Through every twist and turn, Shonda and
+                        Dave have found that the most important path is the
+                        one they walk together.
+                    </p>
+                    <div class="card-actions justify-center">
+                        <button class="btn btn-primary"
+                            >Join Our Journey
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="divider divider-horizontal"></div>
-            <div class="flex-1">
-                <h1 class="text-5xl font-bold font-great-vibes">Dave</h1>
-                <div class="divider"></div>
+        </div>
+
+        <div class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0">
+            <h1 class="text-5xl font-bold font-great-vibes">Dave</h1>
+            <div class="divider"></div>
+            <div class="card glass w-full">
+                <figure>
+                    <Image src={DaveImage} alt="Dave" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title font-great-vibes justify-end text-4xl">
+                        David Wagner
+                    </h2>
+                    <p class="prose">
+                        David Wagner, a native of Western Washington, spent
+                        his childhood amidst the towering pines and rugged
+                        mountains of the Pacific Northwest. As a dedicated
+                        Boy Scout, he developed a deep appreciation for the
+                        great outdoors, mastering the skills of camping,
+                        hiking, and wilderness survival from a young age.
+                        Dave's love for nature is evident in every aspect of
+                        his life, whether he's exploring the winding trails
+                        of the Cascades or setting up camp by a pristine
+                        mountain lake.
+                    </p>
+                    <p class="prose">
+                        Beyond his adventures in the wild, Dave is known for
+                        his strong sense of community and leadership. His
+                        experiences in the Boy Scouts taught him the
+                        importance of teamwork, responsibility, and giving
+                        back, values he carries into his daily life. Whether
+                        organizing group hikes, volunteering for
+                        conservation efforts, or simply sharing his passion
+                        for the outdoors with friends and family, Dave's
+                        enthusiasm for nature and adventure is infectious.
+                    </p>
+                    <div
+                        class="card-actions sm:justify-end justify-center"
+                    >
+                        <button class="btn btn-primary"
+                            >Learn more about Dave!</button
+                        >
+                    </div>
+                </div>
             </div>
         </div>
     </div>
