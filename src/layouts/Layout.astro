@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import "@fontsource/great-vibes"; // Import the 'Great Vibes' font from Fontsource
+import { Image } from "astro:assets"; // Import the Image component from Astro for image rendering
 
 import Header from "../components/Header.astro"; // Import the Header component to be used in the layout
 import Footer from "../components/Footer.astro"; // Import the Footer component to be used in the layout
@@ -14,7 +15,7 @@ interface Props {
 const { title } = Astro.props;
 
 // Social Image for Open Graph meta tags
-const ogImage = new URL("/images/tmp_card.jpg", Astro.site);
+const ogImage = '../images/tmp_card.jpg';
 
 // Cononical URL for Open Graph meta tags
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
