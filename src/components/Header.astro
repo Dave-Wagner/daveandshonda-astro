@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets'; // Import the Image component from Astro's assets package
-import OurLogo from '../images/DaveandShondaLogo2.png'; // Import the logo image for the navbar
+import { Image } from "astro:assets"; // Import the Image component from Astro's assets package
+import OurLogo from "../images/DaveandShondaLogo2.png"; // Import the logo image for the navbar
 
 // Define the Props interface, specifying the types for the props that the component expects
 interface Props {
-	title: string; // The title to be displayed in the navbar
+    title: string; // The title to be displayed in the navbar
 }
 
 // Destructure the props passed to the component for easier access
@@ -19,7 +19,6 @@ const { title } = Astro.props;
 	- 'bg-base-300': A DaisyUI class for setting the background color of the navbar.
 -->
 <nav class="navbar justify-between bg-base-300 sticky top-0 z-50 w-full px-4">
-    
     <!-- Logo and Title -->
     <!-- 
 		The logo and title are wrapped in an anchor tag, which acts as a link (could be linked to the homepage).
@@ -33,14 +32,9 @@ const { title } = Astro.props;
 			- alt="Logo": The alt text for accessibility.
 			- width={48} and height={48}: Set the logo dimensions to 48x48 pixels.
 		-->
-        <Image 
-            alt="Logo" 
-            src={OurLogo} 
-            class="" 
-            width={48}
-            height={48}
-        />
-        <span>Dave & Shonda</span> <!-- Display the title next to the logo -->
+        <Image alt="Logo" src={OurLogo} class="" width={48} height={48} />
+        <span>Dave & Shonda</span>
+        <!-- Display the title next to the logo -->
     </a>
 
     <!-- Mobile Menu -->
@@ -55,7 +49,8 @@ const { title } = Astro.props;
 			- 'btn btn-ghost': DaisyUI classes for a button with no background.
 		-->
         <button class="btn btn-ghost">
-            <i class="fa-solid fa-bars text-lg"></i> <!-- FontAwesome icon for the hamburger menu -->
+            <i class="fa-solid fa-bars text-lg"></i>
+            <!-- FontAwesome icon for the hamburger menu -->
         </button>
 
         <!-- 
@@ -70,7 +65,10 @@ const { title } = Astro.props;
 			- 'w-64': Tailwind utility for setting the width of the dropdown to 64 units.
 			- 'gap-2': Tailwind utility for spacing between menu items.
 		-->
-        <ul tabindex="0" class="dropdown-content menu z-[1] bg-base-200 p-4 rounded-box shadow w-64 gap-2">
+        <ul
+            tabindex="0"
+            class="dropdown-content menu z-[1] bg-base-200 p-4 rounded-box shadow w-64 gap-2"
+        >
             <!-- List of menu items for mobile -->
             <li><a href="/us">Our Story</a></li>
             <li><a href="/rsvp">RSVP</a></li>
@@ -86,8 +84,14 @@ const { title } = Astro.props;
                     <li><a href="/#food">Food</a></li>
                 </ul>
             </li>
-            <a class="btn btn-primary btn-sm">
-                <i class="fa-solid fa-gifts"></i> <!-- FontAwesome icon for gifts -->
+            <a
+                href="https://www.amazon.com/wedding/share/daveandshonda"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-sm"
+            >
+                <i class="fa-solid fa-gifts"></i>
+                <!-- FontAwesome icon for gifts -->
                 Registry
             </a>
         </ul>
@@ -102,21 +106,25 @@ const { title } = Astro.props;
     <div class="hidden md:flex gap-2">
         <!-- Menu items for desktop -->
         <a class="btn btn-ghost btn-sm" href="/us">
-            <i class="fa-solid fa-heart text-secondary"></i> <!-- FontAwesome icon with heart -->
+            <i class="fa-solid fa-heart text-secondary"></i>
+            <!-- FontAwesome icon with heart -->
             Our Story
         </a>
 
         <a href="/rsvp" class="btn btn-ghost btn-sm">
-            <i class="fa-solid fa-address-book text-secondary"></i> <!-- FontAwesome icon with address book -->
+            <i class="fa-solid fa-address-book text-secondary"></i>
+            <!-- FontAwesome icon with address book -->
             RSVP
         </a>
 
         <!-- Dropdown menu for additional wedding information -->
         <div class="dropdown dropdown-end">
             <button class="btn btn-ghost btn-sm">
-                <i class="fa-solid fa-circle-info text-secondary"></i> <!-- FontAwesome icon with info circle -->
+                <i class="fa-solid fa-circle-info text-secondary"></i>
+                <!-- FontAwesome icon with info circle -->
                 Wedding Info
-                <i class="fa-solid fa-chevron-down"></i> <!-- FontAwesome icon with down arrow -->
+                <i class="fa-solid fa-chevron-down"></i>
+                <!-- FontAwesome icon with down arrow -->
             </button>
 
             <!-- 
@@ -131,15 +139,24 @@ const { title } = Astro.props;
 				- 'w-56': Tailwind utility for setting the width of the dropdown to 56 units.
 				- 'gap-2': Tailwind utility for spacing between menu items.
 			-->
-            <ul tabindex="0" class="dropdown-content menu z-[1] bg-base-200 p-6 rounded-box shadow w-56 gap-2">
+            <ul
+                tabindex="0"
+                class="dropdown-content menu z-[1] bg-base-200 p-6 rounded-box shadow w-56 gap-2"
+            >
                 <li><a href="/#venue-location">Location</a></li>
                 <li><a href="/#accomodations">Accommodations</a></li>
                 <li><a href="/#food">Food</a></li>
             </ul>
         </div>
 
-        <a class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-gifts"></i> <!-- FontAwesome icon with gifts -->
+        <a
+            href="https://www.amazon.com/wedding/share/daveandshonda"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+        >
+            <i class="fa-solid fa-gifts"></i>
+            <!-- FontAwesome icon with gifts -->
             Registry
         </a>
     </div>

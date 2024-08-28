@@ -12,8 +12,9 @@
 	- 'rounded': Adds rounded corners to the footer.
 	- 'p-10': Adds padding around the footer content.
 -->
-<footer class="footer footer-center bg-base-200 text-base-content rounded p-10 z-5 w-full overflow-x-hidden">
-    
+<footer
+    class="footer footer-center bg-base-200 text-base-content rounded p-10 z-5 w-full overflow-x-hidden"
+>
     <!-- Navigation section of the footer -->
     <nav class="grid grid-flow-col gap-4">
         <!-- 
@@ -26,7 +27,12 @@
         <a href="/#venue-location" class="link link-hover">Location</a>
         <a href="/#accomodations" class="link link-hover">Accommodations</a>
         <a href="/#food" class="link link-hover">Food</a>
-        <a class="link link-hover">Registry</a>
+        <a
+            href="https://www.amazon.com/wedding/share/daveandshonda"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link link-hover">Registry</a
+        >
     </nav>
 
     <!-- Social media icons section -->
@@ -91,7 +97,8 @@
 				Display the current year dynamically using JavaScript's Date object.
 				A custom message is displayed, giving a personal touch to the footer.
 			-->
-            Copyright © {new Date().getFullYear()} - All rights reserved by a dude that loves his wife.
+            Copyright © {new Date().getFullYear()} - All rights reserved by a dude
+            that loves his wife.
         </p>
     </aside>
 </footer>
