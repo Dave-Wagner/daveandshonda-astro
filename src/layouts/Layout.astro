@@ -1,12 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { Image } from "astro:assets"; // Import the Images component from Astro for image optimization
 import "@fontsource/great-vibes"; // Import the 'Great Vibes' font from Fontsource
 
 import Header from "../components/Header.astro"; // Import the Header component to be used in the layout
 import Footer from "../components/Footer.astro"; // Import the Footer component to be used in the layout
-
-import ogImage from "../images/tmp_card.jpg"; // Import the Open Graph image for social media sharing
 
 // Define the Props interface, specifying the types for the props that the component expects
 interface Props {
@@ -16,8 +13,11 @@ interface Props {
 // Destructure the props passed to the component for easier access
 const { title } = Astro.props;
 
-// The current path of the page
-const currentPath = Astro.url.pathname;
+// Social Image for Open Graph meta tags
+const ogImage = new URL("/images/tmp_card.jpg", Astro.site);
+
+// Cononical URL for Open Graph meta tags
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -61,12 +61,17 @@ const currentPath = Astro.url.pathname;
 		/>
 
 		<!--
+			Link to connonical URL for Open Graph meta tags.
+		-->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!--
 			Open Graph meta tags for social media sharing.
 		-->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content="The wedding website of Dave and Shonda" />
-		<meta property="og:image" content={ogImage.src} />
-		<meta property="og:url" content={currentPath} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="application" />
 
 		<!-- 
