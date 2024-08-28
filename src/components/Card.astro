@@ -7,11 +7,13 @@ interface Props {
 	body: string; // The body text or description within the card
 	href: string; // The URL to navigate to when the card's button is clicked
 	buttonText: string; // The text to display on the button within the card
+	target?: '_self' | '_blank' | '_parent' | '_top'; // Optional prop for specifying the target attribute of the link
+	rel?: 'noopener' | 'noreferrer' | 'nofollow' | 'noopener noreferrer' | 'noreferrer noopener'; // Union type for valid rel attribute values
 	imageSrc: ImageMetadata; // The image source, expected to be an ImageMetadata object from Astro's assets
 }
 
 // Destructure the props passed to the component for easier access
-const { href, title, body, buttonText, imageSrc } = Astro.props;
+const { href, title, body, buttonText, target = "_self", rel, imageSrc } = Astro.props;
 ---
 
 <!-- 
@@ -69,6 +71,8 @@ const { href, title, body, buttonText, imageSrc } = Astro.props;
 			-->
 			<a
 				href={href}
+				target={target}
+				rel={rel}
 				class="btn btn-primary text-xs sm:text-sm md:text-base lg:text-lg"
 				>{buttonText}</a
 			>

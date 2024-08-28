@@ -1,0 +1,43 @@
+---
+import Card from "./Card.astro"; // Import the Card component
+
+// Import the venue image
+import venueImage from "../images/venue.jpg";
+---
+
+<!-- Add an anchor with an id to allow linking to this section -->
+<a id="venue-location"></a>
+
+<div class="min-h-full flex justify-center items-center p-8">
+    <div class="flex-1 flex justify-center">
+        <Card
+            title="Red Brick Facility"
+            body="A timeless gem in Otis Park, where history meets nature's embrace, creating the perfect backdrop for unforgettable moments."
+            href="https://maps.app.goo.gl/iRSArJfCU85X3mnYA"
+            target="_blank"
+            rel="noopener noreferrer"
+            buttonText="Directions"
+            imageSrc={venueImage}
+        />
+    </div>
+
+    <div
+        class="flex-1 flex flex-col justify-center items-center text-center px-8"
+    >
+        <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-great-vibes"
+        >
+            Our Venue
+        </h2>
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl">
+            The Red Brick Facility at Otis Park in Bedford, Indiana, has a rich
+            history dating back to when the park itself was established in the
+            early 1900s. Otis Park, named after Dr. Otis, a prominent figure in
+            Bedford, is a historic landmark in the community. The Red Brick
+            building was originally part of the larger estate that included a
+            mansion and other structures. Over the years, it has served various
+            community functions, and its picturesque setting has made it a
+            popular venue for weddings and other significant events.
+        </p>
+    </div>
+</div>
