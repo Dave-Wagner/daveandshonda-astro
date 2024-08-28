@@ -252,7 +252,7 @@ export default function RSVPForm() {
                         <label className="textarea textarea-bordered flex items-center gap-2 m-2">
                             Message:
                             <textarea
-                                className="textarea"
+                                className="textarea grow"
                                 placeholder="I can't wait to see you!"
                                 name="message"
                                 value={formData.message}
