@@ -15,6 +15,7 @@
     "@astrojs/netlify": "^5.5.1",
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/great-vibes": "^5.0.22",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.14.5",
