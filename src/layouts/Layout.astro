@@ -75,6 +75,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="application" />
 
+		<!--
+			Twitter meta tags for sharing on Twitter.
+		-->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@daveandshonda" />
+		<meta name="twitter:creator" content="@daveandshonda" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="The wedding website of Dave and Shonda" />
+		<meta name="twitter:image" content={ogImage.src} />
+		<meta name="twitter:url" content={canonicalURL} />
+
 		<!-- 
 			Dynamically set the page generator meta tag.
 			- 'content={Astro.generator}': Automatically populated by Astro to indicate that Astro generated the page.
