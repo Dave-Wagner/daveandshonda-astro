@@ -122,6 +122,7 @@ export default function RSVPForm() {
                 <label className="input input-bordered flex items-center gap-2 m-2">
                     First Name:
                     <input
+                        id='first_name'
                         type="text"
                         className="grow"
                         placeholder="Daisy"
@@ -133,6 +134,7 @@ export default function RSVPForm() {
                 <label className="input input-bordered flex items-center gap-2 m-2">
                     Last Name:
                     <input
+                        id='last_name'
                         type="text"
                         className="grow"
                         placeholder="Duck"
@@ -144,6 +146,7 @@ export default function RSVPForm() {
                 <label className="input input-bordered flex items-center gap-2 m-2">
                     Email:
                     <input
+                        id='email'
                         type="email"
                         className="grow"
                         placeholder="daisy@duck.com"
@@ -156,6 +159,7 @@ export default function RSVPForm() {
                     <label className="label cursor-pointer">
                         <span className="label-text">Yes, I'll be there!</span>
                         <input
+                            id='can_attend'
                             type="radio"
                             name="can_attend"
                             className="radio checked:bg-success"
@@ -168,6 +172,7 @@ export default function RSVPForm() {
                     <label className="label cursor-pointer">
                         <span className="label-text">Sorry, I won't be able to attend.</span>
                         <input
+                            id='cannot_attend'
                             type="radio"
                             name="can_attend"
                             className="radio checked:bg-error"
@@ -182,6 +187,7 @@ export default function RSVPForm() {
                         <label className="input input-bordered flex items-center gap-2 m-2">
                             Phone:
                             <input
+                                id='phone'
                                 type="tel"
                                 className="grow"
                                 placeholder="555-555-5555"
@@ -197,6 +203,7 @@ export default function RSVPForm() {
                                 <span className="label-text-alt">Please list any food allergies you have.</span>
                             </label>
                             <input
+                                id='food_allergies'
                                 type="text"
                                 placeholder="None"
                                 className="input input-bordered w-full grow"
@@ -211,6 +218,7 @@ export default function RSVPForm() {
                                 <span className="label-text">Special Considerations?</span>
                             </label>
                             <input
+                                id='special_considerations'
                                 type="text"
                                 placeholder="None"
                                 className="input input-bordered w-full grow"
@@ -226,6 +234,7 @@ export default function RSVPForm() {
                                 <span className="label-text-alt">Including yourself</span>
                             </div>
                             <input
+                                id='guest_count'
                                 type="number"
                                 placeholder="1"
                                 className="input input-bordered w-full max-w-xs grow"
@@ -240,6 +249,7 @@ export default function RSVPForm() {
                                 <span className="label-text">Number of Child Guests?</span>
                             </div>
                             <input
+                                id='guest_count_child'
                                 type="number"
                                 placeholder="0"
                                 className="input input-bordered w-full max-w-xs grow"
@@ -252,6 +262,7 @@ export default function RSVPForm() {
                         <label className="textarea textarea-bordered flex items-center gap-2 m-2">
                             Message:
                             <textarea
+                                id='message'
                                 className="textarea grow"
                                 placeholder="I can't wait to see you!"
                                 name="message"
