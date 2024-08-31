@@ -1,0 +1,79 @@
+---
+import Card from "./Card.astro";
+import type { ImageMetadata } from 'astro';
+
+interface SectionProps {
+  title: string; // Title of the section
+  body: string; // Body text or description within the section
+  imageSrc: ImageMetadata; // The image source, expected to be an ImageMetadata object from Astro's assets
+  imageLeft?: boolean; // Optional prop to decide image alignment
+  cardTitle: string; // The title of the card
+  cardBody: string; // The body text or description within the card
+  cardHref: string; // The URL to navigate to when the card's button is clicked
+  cardButtonText: string; // The text to display on the button within the card
+  cardTarget?: '_self' | '_blank' | '_parent' | '_top'; // Optional prop for specifying the target attribute of the link
+  cardRel?: 'noopener' | 'noreferrer' | 'nofollow' | 'noopener noreferrer' | 'noreferrer noopener'; // Union type for valid rel attribute values
+}
+
+// Default the `props` to an empty object to avoid destructuring errors
+const props = Astro.props || {} as Partial<SectionProps>;
+
+// Use default values in destructuring to avoid errors
+const {
+  title = 'Default Title',
+  body = 'Default Body Text',
+  imageSrc,
+  imageLeft = true,
+  cardTitle = 'Default Card Title',
+  cardBody = 'Default Card Body',
+  cardHref = '#',
+  cardButtonText = 'Click Here',
+  cardTarget = '_self',
+  cardRel = 'noopener noreferrer',
+} = props;
+
+// Ensure that imageSrc is defined to avoid runtime errors
+if (!imageSrc) {
+  throw new Error("imageSrc prop is required and must be of type ImageMetadata.");
+}
+---
+
+<div class="min-h-full flex justify-center items-center p-8">
+  {imageLeft ? (
+    <>
+      <div class="flex-1 flex justify-center">
+        <Card
+          title={cardTitle}
+          body={cardBody}
+          href={cardHref}
+          target={cardTarget}
+          rel={cardRel}
+          buttonText={cardButtonText}
+          imageSrc={imageSrc}
+        />
+      </div>
+      <div class="flex-1 flex flex-col justify-center items-center text-center px-8">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-great-vibes">{title}</h2>
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl">{body}</p>
+      </div>
+    </>
+  ) : (
+    <>
+      <div class="flex-1 flex flex-col justify-center items-center text-center px-8">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-great-vibes">{title}</h2>
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl">{body}</p>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <Card
+          title={cardTitle}
+          body={cardBody}
+          href={cardHref}
+          target={cardTarget}
+          rel={cardRel}
+          buttonText={cardButtonText}
+          imageSrc={imageSrc}
+        />
+      </div>
+    </>
+  )}
+</div>

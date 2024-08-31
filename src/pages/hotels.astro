@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import hotelImageLakeside from "../images/four_winds_lakeside.jpg";
+import hotelImageHampton from "../images/hampton_inn.avif";
+import hotelImageSuper8 from "../images/super8.avif";
+import hotelImageWampler from "../images/wampler_house.jpg";
+---
+
+<Layout title="Dave & Shonda - Accommodations">
+  <h1 class="text-5xl font-bold text-center my-8 font-great-vibes">
+    Accommodation Options
+  </h1>
+
+  <Section
+    title="Our Preferred Stay: Wampler House"
+    body="Whenever we need a relaxing escape close to home, we choose Wampler House in Bloomington. This charming Bed & Breakfast offers the perfect blend of comfort and elegance. We've stayed here several times for staycations, and every visit is a delight. The rooms are cozy, with some featuring two-person Jacuzzi tubs that are perfect for unwinding. The substantial breakfast is always a treat, and the friendly staff goes above and beyond to make us feel welcome. Located just a short drive from Indiana University, it's our top recommendation for a tranquil and memorable stay."
+    imageSrc={hotelImageWampler}
+    imageLeft={false}
+    cardTitle="Wampler House Bed & Breakfast"
+    cardBody="Experience the comfort and charm of Wampler House, where Hoosier hospitality and luxurious amenities await."
+    cardHref="https://www.wamplerhouse.com"
+    cardButtonText="Book Your Stay"
+    cardTarget="_blank"
+    cardRel="noopener noreferrer"
+  />
+
+  <Section
+    title="Luxury Options"
+    body="For a luxurious stay, consider the Fourwinds Lakeside Inn & Marina in Bloomington, offering stunning views and premium amenities. Perfect for those looking to relax in style."
+    imageSrc={hotelImageLakeside}
+    imageLeft={true}
+    cardTitle="Fourwinds Lakeside Inn"
+    cardBody="Enjoy a lakeside retreat with upscale accommodations and recreational activities."
+    cardHref="https://www.fourwindslakeside.com"
+    cardButtonText="View Details"
+    cardTarget="_blank"
+    cardRel="noopener noreferrer"
+  />
+
+  <Section
+    title="Comfortable Mid-Range Stays"
+    body="The Hampton Inn in Bedford and SpringHill Suites in Bloomington offer excellent accommodations with modern amenities and convenient locations."
+    imageSrc={hotelImageHampton}
+    imageLeft={false}
+    cardTitle="Hampton Inn & SpringHill Suites"
+    cardBody="Enjoy comfortable rooms and great service at reasonable rates."
+    cardHref="https://www.hilton.com/en/hotels/indiehx-hampton-bedford/"
+    cardButtonText="Book Hampton Inn"
+    cardTarget="_blank"
+    cardRel="noopener noreferrer"
+  />
+
+  <Section
+    title="Budget-Friendly Choices"
+    body="Consider the Super 8 by Wyndham in Bedford or La Quinta Inn & Suites in Bloomington for economical yet comfortable options."
+    imageSrc={hotelImageSuper8}
+    imageLeft={true}
+    cardTitle="Super 8 & La Quinta"
+    cardBody="Affordable and convenient accommodations close to our venue."
+    cardHref="https://www.wyndhamhotels.com/super-8/bedford-indiana/super-8-bedford/overview"
+    cardButtonText="Check Availability"
+    cardTarget="_blank"
+    cardRel="noopener noreferrer"
+  />
+</Layout>`;

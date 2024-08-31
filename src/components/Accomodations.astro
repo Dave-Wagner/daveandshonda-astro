@@ -1,0 +1,20 @@
+---
+// Import the Section component and hotel image
+import Section from "./Section.astro";
+import hotelImage from "../images/hotel.jpg"; // Ensure this is typed correctly as ImageMetadata
+---
+
+<a id="accommodations"></a>
+
+<Section
+  title="Where to Stay"
+  body="We've gathered a selection of accommodation options in Bedford and nearby Bloomington, ranging from luxury to budget-friendly. Whether you're seeking comfort, convenience, or affordability, there's a perfect spot for everyone."
+  imageSrc={hotelImage}
+  imageLeft={false}
+  cardTitle="Explore Accommodations"
+  cardBody="Discover a range of hotels and lodging options to suit your needs during your stay."
+  cardHref="/hotels" // Link to the detailed accommodations page
+  cardButtonText="View Options"
+  cardTarget="_self"
+  cardRel="noopener noreferrer"
+/>
