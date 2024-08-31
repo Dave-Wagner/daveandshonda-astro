@@ -116,7 +116,7 @@ export default function RSVPForm() {
     };
 
     return (
-        <div className='card glass w-full'>
+        <div className='card glass w-full mb-8'>
 
             <form className="p-2" onSubmit={handleSubmit} noValidate>
                 <label className="input input-bordered flex items-center gap-2 m-2">
