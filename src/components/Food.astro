@@ -1,0 +1,19 @@
+---
+// Import the Section component and image for Smokin' Jim's BBQ
+import Section from "./Section.astro";
+import smokinJimsImage from "../images/smokin_jims_bbq.jpg"; // Ensure this is typed correctly as ImageMetadata
+---
+
+<a id="food-options"></a>
+
+<Section
+    title="Food & Catering"
+    body="We are excited to share the diverse food options available for our wedding, ranging from our chosen caterer, Smokin' Jim's BBQ, to other excellent dining choices in the area. Whether you're looking for high-end dining or budget-friendly eats, Bedford and Bloomington have something for everyone."
+    imageSrc={smokinJimsImage}
+    imageLeft={true}
+    cardTitle="Explore Food Options"
+    cardBody="Discover the delicious catering and dining options available for our wedding guests."
+    cardHref="/food"
+    cardButtonText="See Food Options"
+    cardTarget="_self"
+/>

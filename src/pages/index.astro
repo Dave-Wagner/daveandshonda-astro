@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro"; // Import the Layout component, wh
 import Hero from "../components/Hero.astro"; // Import the Hero component, which will be displayed on this page
 import Location from "../components/Location.astro"; // Import the Location component for displaying the wedding location
 import Accommodations from "../components/Accommodations.astro"; // Import the Accomodations component for displaying venue details
+import Food from "../components/Food.astro"; // Import the Food component for displaying food options
 ---
 
 <!-- 
@@ -32,5 +33,11 @@ import Accommodations from "../components/Accommodations.astro"; // Import the A
 			The Accomodations component will display details about the venue and accommodations.
 		-->
 		<Accommodations />
+
+		<!-- 
+			Render the Food component inside the <main> tag.
+			The Food component will display food and catering options for the wedding.
+		-->
+		<Food />
 	</main>
 </Layout>

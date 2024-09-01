@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import smokinJimsImage from "../images/smokin_jims_bbq.jpg";
+import highEndImage from "../images/high_end_restaurant.avif";
+import midRangeImage from "../images/mid_range_restaurant.jpg";
+import budgetImage from "../images/budget_restaurant.jpg";
+---
+
+<a href="#food"></a>
+
+<Layout title="Dave & Shonda - Food Options">
+    <h1 class="text-5xl font-bold text-center my-8 font-great-vibes">
+        Food & Catering Options
+    </h1>
+
+    <Section
+        title="Our Chosen Caterer: Smokin' Jim's BBQ"
+        body="We're thrilled to have Smokin' Jim's BBQ as our caterer for the wedding. Known for their mouth-watering smoked meats and homemade sides, they bring the best of southern-style BBQ to Indiana. Whether it's their famous pulled pork, smoked brisket, or their delicious mac 'n cheese, every dish is prepared with love and care. We can't wait for you to taste their amazing food!"
+        imageSrc={smokinJimsImage}
+        imageLeft={false}
+        cardTitle="Smokin' Jim's BBQ"
+        cardBody="Experience the flavor of authentic BBQ from Smokin' Jim's, our top pick for wedding catering."
+        cardHref="https://www.smokinjimsbarbecue.com/"
+        cardButtonText="Explore Their Menu"
+        cardTarget="_blank"
+        cardRel="noopener noreferrer"
+    />
+
+    <Section
+        title="High-End Dining Options"
+        body="For a top-notch dining experience, consider Che Bello in Bloomington. Located in the heart of downtown, Che Bello offers a cozy atmosphere with a focus on fresh, locally-sourced Italian cuisine. Their menu features a range of delicious options including handmade pasta, wood-grilled meats, and artisanal pizzas. Perfect for those seeking a refined dining experience, Che Bello also boasts an impressive selection of cocktails and Italian wines."
+        imageSrc={highEndImage}
+        imageLeft={true}
+        cardTitle="Che Bello"
+        cardBody="Indulge in authentic Italian flavors and a memorable dining experience at Che Bello, one of Bloomington's finest restaurants."
+        cardHref="https://www.chebellorestaurant.com"
+        cardButtonText="Discover Fine Dining"
+        cardTarget="_blank"
+        cardRel="noopener noreferrer"
+    />
+
+    <Section
+        title="Mid-Range Dining"
+        body="For a welcoming, mid-range dining experience, Mamma's & Pappa's Bar and Grill in Bedford is a local favorite. Known for its comfortable atmosphere and hearty American cuisine, this family-friendly restaurant offers a wide variety of dishes that cater to all tastes. Whether you're craving a classic country fried pork steak, delicious sandwiches, or their popular soup and salad bar, Mamma's & Pappa's delivers satisfying meals with generous portions. It's a great spot for both locals and travelers looking for a reliable and enjoyable dining option."
+        imageSrc={midRangeImage}
+        imageLeft={false}
+        cardTitle="Mamma's & Pappa's Bar and Grill"
+        cardBody="Enjoy a cozy meal with a diverse menu at Mamma's & Pappa's, where comfort food meets casual dining."
+        cardHref="https://www.mammasandpappasbedford.com"
+        cardButtonText="View Menu"
+        cardTarget="_blank"
+        cardRel="noopener noreferrer"
+    />
+
+    <Section
+        title="Budget-Friendly Eats"
+        body="For a classic American fast food experience on a budget, consider Steak 'n Shake in Bedford. Known for their original Steakburgers and hand-dipped milkshakes, this iconic chain offers a variety of affordable meals that don't skimp on flavor. Whether you're in the mood for a Double Steakburger with cheese, crispy fries, or one of their famous milkshakes, Steak 'n Shake is a convenient and wallet-friendly option for a quick bite."
+        imageSrc={budgetImage}
+        imageLeft={true}
+        cardTitle="Steak 'n Shake"
+        cardBody="Enjoy classic American fare at an unbeatable price at Steak 'n Shake, perfect for budget-conscious diners."
+        cardHref="https://www.steaknshake.com/locations/in-bedford-james-avenue/"
+        cardButtonText="View Menu"
+        cardTarget="_blank"
+        cardRel="noopener noreferrer"
+    />
+</Layout>
