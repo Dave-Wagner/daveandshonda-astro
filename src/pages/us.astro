@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"; // Import the Image component from Astro's assets package
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 import ShondaImage from "../images/marius-muresan-phze0FOgQpk-unsplash.jpg";
@@ -7,141 +7,192 @@ import DaveImage from "../images/pexels-lukzy-18247648.jpg";
 ---
 
 <Layout title="Dave & Shonda - Our Story">
-    <div class="flex flex-col sm:flex-row justify-center items-start sm:items-stretch mt-12 sm:gap-12 px-4">
+    <div
+        class="flex flex-col sm:flex-row justify-center items-start sm:items-stretch mt-12 sm:gap-12 px-4"
+    >
         <div class="flex-1 flex flex-col items-center text-center">
             <h1 class="text-5xl font-bold font-great-vibes">Shonda</h1>
             <div class="divider"></div>
             <div class="card glass w-full">
                 <figure>
-                    <Image src={ShondaImage} alt="Shonda" />
+                    <Image src={ShondaImage} alt="Shonda Arnold" />
                 </figure>
                 <div class="card-body">
                     <h2 class="card-title font-great-vibes text-4xl">
-                        Shonda Rollins
+                        Shonda Arnold
                     </h2>
                     <p class="prose">
-                        Shonda Rollins, a native of Bedford, Indiana, grew
-                        up surrounded by the natural beauty and close-knit
-                        community of her hometown. From an early age, she
-                        developed a deep love for the outdoors, exploring
-                        the rolling hills and limestone quarries that define
-                        the landscape of southern Indiana. Shonda's passion
-                        for nature is matched only by her dedication to
-                        family and community, always striving to make a
-                        positive impact on those around her.
+                        Shonda Arnold, a proud native of Lawrence County,
+                        Indiana, grew up in a close-knit Christian family where
+                        love and support were abundant. From an early age,
+                        Shonda shared a special bond with her mom through their
+                        mutual love for softball, playing together for an
+                        incredible 20 years. These experiences, along with the
+                        unwavering love of her grandpa, instilled in her a deep
+                        sense of compassion and a heart full of love.
                     </p>
                     <p class="prose">
-                        After graduating from high school, Shonda pursued a
-                        career in education, where she quickly became known
-                        for her compassion, creativity, and commitment to
-                        her students. Whether she's organizing local events,
-                        volunteering, or simply enjoying a hike through the
-                        trails she knows by heart, Shonda brings warmth and
-                        enthusiasm to everything she does. Her journey is
-                        one of resilience, joy, and a deep connection to her
-                        roots.
+                        Shonda’s greatest passion is her kids, and she finds
+                        immense joy in watching them grow and learn.
+                        Professionally, she works as a Home Health Aid, drawn to
+                        roles where she can make a positive impact on others’
+                        lives. With a long-term vision of opening a daycare
+                        center, Shonda’s nurturing spirit and love for children
+                        guide her every day.
                     </p>
-                    <div
-                        class="card-actions sm:justify-start justify-center"
-                    >
-                        <button class="btn btn-primary"
-                            >Learn more about Shonda!</button
-                        >
-                    </div>
+                    <p class="prose">
+                        In her free time, Shonda enjoys spending time with
+                        family, relaxing at home, and cherishing the simple joys
+                        of life. Growing up in Heltonville, she has fond
+                        memories of playing outdoors, running barefoot through
+                        the yard, and swimming in her family's pond—experiences
+                        that shaped her love for nature and the outdoors.
+                    </p>
+                    <p class="prose">
+                        Community is at the heart of who Shonda is. She finds
+                        fulfillment in being a support system for those around
+                        her, whether through listening, offering a helping hand,
+                        or singing at church, where she connects with others on
+                        a spiritual level. Her guiding values are kindness and
+                        support, and she strives to share God's love in every
+                        aspect of her life.
+                    </p>
+                    <p class="prose">
+                        Shonda’s journey has been one of growth, love, and
+                        resilience. She has faced life’s challenges with grace
+                        and strength, always looking for the silver lining in
+                        every situation. Her unwavering faith and commitment to
+                        her family have been a source of inspiration for those
+                        around her, and they continue to guide her on her path
+                        to a brighter future.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0">
+        <div
+            class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0"
+        >
             <h1 class="text-5xl font-bold font-great-vibes">Us</h1>
             <div class="divider"></div>
             <div class="card glass w-full">
                 <div class="card-body">
-                    <h2 class="card-title font-great-vibes justify-center text-4xl">
+                    <h2
+                        class="card-title font-great-vibes justify-center text-4xl"
+                    >
                         Our Journey Together
                     </h2>
                     <p class="prose">
-                        It all began in the most unexpected of places—a
-                        hiking trail nestled deep in the heart of the
-                        Pacific Northwest. Shonda, with her love for
-                        limestone quarries and rolling hills, found herself
-                        far from home, exploring new terrains. Dave, a
-                        mountain lover and seasoned Boy Scout, was just
-                        another adventurer on the trail, until fate (or
-                        perhaps a shared love for the great outdoors)
-                        brought them together.
+                        It all began in the most unexpected of places—a hiking
+                        trail nestled deep in the heart of the Pacific
+                        Northwest. Shonda, with her love for limestone quarries
+                        and rolling hills, found herself far from home,
+                        exploring new terrains. Dave, a mountain lover and
+                        seasoned Boy Scout, was just another adventurer on the
+                        trail, until fate (or perhaps a shared love for the
+                        great outdoors) brought them together.
                     </p>
                     <p class="prose">
-                        What started as a casual conversation about the best
-                        way to set up a tent in the rain quickly turned into
-                        a deeper connection. Shonda shared stories of her
-                        life in Bedford, Indiana, while Dave regaled her
-                        with tales of his adventures in the mountains. It
-                        didn’t take long for them to realize they were two
-                        sides of the same coin—one from the rolling hills of
-                        Indiana, the other from the rugged peaks of
-                        Washington, both with a profound appreciation for
-                        nature and community.
+                        What started as a casual conversation about the best way
+                        to set up a tent in the rain quickly turned into a
+                        deeper connection. Shonda shared stories of her life in
+                        Bedford, Indiana, while Dave regaled her with tales of
+                        his adventures in the mountains. It didn’t take long for
+                        them to realize they were two sides of the same coin—one
+                        from the rolling hills of Indiana, the other from the
+                        rugged peaks of Washington, both with a profound
+                        appreciation for nature and community.
                     </p>
                     <p class="prose">
-                        Together, they’ve embarked on countless adventures,
-                        from hiking the Cascades to exploring the hidden
-                        gems of southern Indiana. Their journey is one of
-                        laughter, love, and a shared passion for the
-                        outdoors. Through every twist and turn, Shonda and
-                        Dave have found that the most important path is the
-                        one they walk together.
+                        Together, they’ve embarked on countless adventures, from
+                        hiking the Cascades to exploring the hidden gems of
+                        southern Indiana. Their journey is one of laughter,
+                        love, and a shared passion for the outdoors. Through
+                        every twist and turn, Shonda and Dave have found that
+                        the most important path is the one they walk together.
                     </p>
-                    <div class="card-actions justify-center">
-                        <button class="btn btn-primary"
-                            >Join Our Journey
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0">
+        <div
+            class="flex-1 flex flex-col items-center text-center mt-12 sm:mt-0"
+        >
             <h1 class="text-5xl font-bold font-great-vibes">Dave</h1>
             <div class="divider"></div>
             <div class="card glass w-full">
                 <figure>
-                    <Image src={DaveImage} alt="Dave" />
+                    <Image src={DaveImage} alt="David Wagner" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title font-great-vibes justify-end text-4xl">
+                    <h2
+                        class="card-title font-great-vibes justify-end text-4xl"
+                    >
                         David Wagner
                     </h2>
                     <p class="prose">
-                        David Wagner, a native of Western Washington, spent
-                        his childhood amidst the towering pines and rugged
-                        mountains of the Pacific Northwest. As a dedicated
-                        Boy Scout, he developed a deep appreciation for the
-                        great outdoors, mastering the skills of camping,
-                        hiking, and wilderness survival from a young age.
-                        Dave's love for nature is evident in every aspect of
-                        his life, whether he's exploring the winding trails
-                        of the Cascades or setting up camp by a pristine
-                        mountain lake.
+                        David Wagner hails from the picturesque Pacific
+                        Northwest, where he spent his formative years in Tacoma,
+                        Washington. Growing up in this region, surrounded by the
+                        stunning natural beauty of towering mountains and lush
+                        forests, David developed a deep connection to the
+                        outdoors. As a Boy Scout, he gained invaluable skills in
+                        survival and teamwork, experiences that profoundly
+                        shaped his character. Though life’s journey took him
+                        from Washington to Indiana, Massachusetts, and Texas,
+                        the Northwest’s landscapes and the lessons he learned
+                        there remain integral to who he is today.
                     </p>
                     <p class="prose">
-                        Beyond his adventures in the wild, Dave is known for
-                        his strong sense of community and leadership. His
-                        experiences in the Boy Scouts taught him the
-                        importance of teamwork, responsibility, and giving
-                        back, values he carries into his daily life. Whether
-                        organizing group hikes, volunteering for
-                        conservation efforts, or simply sharing his passion
-                        for the outdoors with friends and family, Dave's
-                        enthusiasm for nature and adventure is infectious.
+                        Professionally, David is a dedicated programmer with a
+                        passion for web development. He sees programming as a
+                        complex puzzle, one that he approaches with the same
+                        enthusiasm others might have for games like Sudoku. His
+                        love for problem-solving is matched by his culinary
+                        skills; David is a self-taught cook who takes pride in
+                        crafting delicious meals for his family and friends. His
+                        ability to perfect a steak or prepare a dish worthy of a
+                        fine dining experience has made him the go-to chef among
+                        his loved ones.
                     </p>
-                    <div
-                        class="card-actions sm:justify-end justify-center"
-                    >
-                        <button class="btn btn-primary"
-                            >Learn more about Dave!</button
-                        >
-                    </div>
+                    <p class="prose">
+                        In his free time, David channels his entrepreneurial
+                        spirit into supporting local businesses and encouraging
+                        others to pursue their passions. He finds joy in
+                        learning new things, whether it’s delving into a
+                        technical manual or exploring a new venture. His drive
+                        to constantly improve himself and those around him is a
+                        testament to his commitment to personal growth and
+                        community.
+                    </p>
+                    <p class="prose">
+                        David’s upbringing in Tacoma, with its mix of urban
+                        challenges and natural escapes, instilled in him a
+                        resilience and appreciation for the beauty of the world.
+                        Despite the harsh realities of growing up in
+                        gang-infested neighborhoods, he always found solace in
+                        nature, which helped him stay on a positive path.
+                    </p>
+                    <p class="prose">
+                        In his community, David is known for his unwavering
+                        support of others. He relishes the opportunity to cook
+                        for friends and family, often taking on a fatherly role
+                        as he uplifts and encourages those around him. His deep
+                        sense of service and willingness to help in times of
+                        crisis make him a pillar of strength for those who know
+                        him.
+                    </p>
+                    <p class="prose">
+                        At the core of David’s life philosophy is unconditional
+                        love. He believes in understanding the human condition,
+                        offering empathy and support without judgment. This
+                        value is central to his relationship with Shonda, who
+                        knows she can always rely on David to provide stability
+                        and wisdom, no matter the situation. His calm, rational
+                        approach to life is a source of comfort for her, and
+                        it’s one of the many reasons why their bond is so
+                        strong.
+                    </p>
                 </div>
             </div>
         </div>
