@@ -9,6 +9,8 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://www.daveandshonda.com',
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+  }),
   integrations: [tailwind(), react()]
 });
